@@ -42,7 +42,7 @@ def check_roman(rom):
 
     for x in range(len(rom)):
 
-        if (rom[x] != 'I' and rom[x] != 'V' and rom[x] != 'X' and rom[x] != 'L' and rom[x] != 'C' and rom[x] != 'D' and rom[x] != 'M'):
+        if (rom[x] not in ('I', 'V', 'X', 'L', 'C', 'D', 'M')):
             return False
         
     return True
