@@ -29,12 +29,12 @@ def roman_to_int(rom):
     
     number = 0
 
-    for x in range(len(roman)):
+    for x in range(len(rom)):
 
-        if x > 0 and rom_val[roman[x]] > rom_val[roman[x - 1]]:
-            number += rom_val[roman[x]] - 2 * rom_val[roman[x - 1]]
+        if x > 0 and rom_val[rom[x]] > rom_val[rom[x - 1]]:
+            number += rom_val[rom[x]] - 2 * rom_val[rom[x - 1]]
         else:
-            number += rom_val[roman[x]]
+            number += rom_val[rom[x]]
 
     return number
 
