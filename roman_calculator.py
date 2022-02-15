@@ -40,14 +40,14 @@ def roman_to_int(rom):
 
 def check_roman(rom):
 
-    good_spell = ('I', 'V', 'X', 'L', 'C', 'D', 'M')
-    bad_spell_2 = ('IL', 'IC', 'ID', 'IM',
+    good_spell = ['I', 'V', 'X', 'L', 'C', 'D', 'M']
+    bad_spell_2 = ['IL', 'IC', 'ID', 'IM',
                    'VV', 'VX', 'VC', 'VD', 'VM',
                    'XD', 'XM',
                    'LL', 'LC', 'LD', 'LM',
-                   'DD', 'DM')
-    bad_spell_3 = ('IIV', 'IIX', 'XXL', 'XXC', 'CCD', 'CCM')
-    bad_spell_4 = ('IIII', 'XXXX', 'CCCC')
+                   'DD', 'DM']
+    bad_spell_3 = ['IIV', 'IIX', 'XXL', 'XXC', 'CCD', 'CCM']
+    bad_spell_4 = ['IIII', 'XXXX', 'CCCC']
     
     for x in range(len(rom)):
 
