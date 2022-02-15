@@ -40,11 +40,35 @@ def roman_to_int(rom):
 
 def check_roman(rom):
 
+    good_spell = ('I', 'V', 'X', 'L', 'C', 'D', 'M')
+    bad_spell_2 = ('IL', 'IC', 'ID', 'IM',
+                   'VV', 'VX', 'VC', 'VD', 'VM',
+                   'XD', 'XM',
+                   'LL', 'LC', 'LD', 'LM',
+                   'DD', 'DM')
+    bad_spell_3 = ('IIV', 'IIX', 'XXL', 'XXC', 'CCD', 'CCM')
+    bad_spell_4 = ('IIII', 'XXXX', 'CCCC')
+    
     for x in range(len(rom)):
 
-        if (rom[x] not in ('I', 'V', 'X', 'L', 'C', 'D', 'M')):
+        if (rom[x] not in good_spell):
             return False
-        
+
+    for x in range(len(rom) - 1):
+
+        if ((rom[x] + rom[x+1]) in bad_spell_2):
+            return False
+
+    for x in range(len(rom) - 2):
+
+        if ((rom[x] + rom[x+1] + rom[x+2]) in bad_spell_3):
+            return False
+
+    for x in range(len(rom) - 3):
+
+        if ((rom[x] + rom[x+1] + rom[x+2] + rom[x+3]) in bad_spell_4):
+            return False
+    
     return True
             
 
@@ -65,11 +89,11 @@ if choice == 1:
     
 else:
 
-    roman = input('Enter a roman numeral: ')
+    roman = input('Enter a roman numeral: ').upper()
 
     while not check_roman(roman):
         print('Bad written roman numeral!!! Please, try again')
-        roman = input('Enter a roman numeral: ')
+        roman = input('Enter a roman numeral: ').upper()
 
     if check_roman(roman):
         print(roman + ' in numbers is: ' + str(roman_to_int(roman)))
