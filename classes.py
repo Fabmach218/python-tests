@@ -6,14 +6,17 @@ class Student:
         self.fname = fname
         self.lname = lname
 
+    def concat_name(self):
+        return self.fname + ' ' + self.lname
+
 list = []
 
 list.append(Student('71694372', 'Fabio', 'Marangon'))
 list.append(Student('72674839', 'Juan', 'Perez'))
 list.append(Student('84729103', 'Fernando', 'Sanchez'))
 
-print('ID\tFirst Name\tLast Name')
+print('ID\tFull Name')
 
 for item in list:
-    print(item.idnum + '\t' + item.fname + '\t' + item.lname)
+    print(item.idnum + '\t' + item.concat_name())
 
