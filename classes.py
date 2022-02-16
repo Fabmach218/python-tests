@@ -8,7 +8,7 @@ class Student:
 
 list = []
 
-list.append(Student('71753072', 'Fabio', 'Marangon'))
+list.append(Student('71694372', 'Fabio', 'Marangon'))
 list.append(Student('72674839', 'Juan', 'Perez'))
 list.append(Student('84729103', 'Fernando', 'Sanchez'))
 
