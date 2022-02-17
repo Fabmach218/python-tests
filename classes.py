@@ -1,19 +1,31 @@
+import random
+
 class Student:
 
-    def __init__(self, idnum, fname, lname):
+    def __init__(self, fname, lname):
 
-        self.idnum = idnum
+        self.idnum = Student.gen_id()
         self.fname = fname
         self.lname = lname
 
     def concat_name(self):
         return self.fname + ' ' + self.lname
 
+    def gen_id():
+
+        idnum = str(random.randrange(1,10**8))
+
+        while len(idnum) < 8:
+
+            idnum = '0' + idnum
+
+        return idnum
+
 list = []
 
-list.append(Student('71694372', 'Fabio', 'Marangon'))
-list.append(Student('72674839', 'Juan', 'Perez'))
-list.append(Student('84729103', 'Fernando', 'Sanchez'))
+list.append(Student('Fabio', 'Marangon'))
+list.append(Student('Juan', 'Perez'))
+list.append(Student('Fernando', 'Sanchez'))
 
 print('ID\tFull Name')
 
